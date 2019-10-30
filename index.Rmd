@@ -1,6 +1,6 @@
 ---
-title: "Nick Strayer's CV"
-author: Nick Strayer
+title: "Rob Smith's CV"
+author: Robert Smith
 date: "`r Sys.Date()`"
 output:
   pagedown::html_resume:
@@ -27,7 +27,10 @@ links <- c()
 source('parsing_functions.R')
 
 # Load csv with position info
-position_data <- read_csv('positions.csv')
+# position_data <- read.csv2('positions.csv', sep = ";")
+position_data <- read.csv2('positions_1.csv', sep = ";")
+write.csv(position_data, "position_data.csv")
+position_data <- read_csv('position_data.csv')
 ```
 
 
@@ -47,8 +50,7 @@ if(PDF_EXPORT){
 Aside
 ================================================================================
 
-
-![logo](beta_dist.png){width=100%}
+![portrait](face.png){width=100%}
 
 ```{r}
 # When in export mode the little dots are unaligned, so fix that. 
@@ -63,11 +65,11 @@ Contact {#contact}
 --------------------------------------------------------------------------------
 
 
-- <i class="fa fa-envelope"></i> nick.strayer@gmail.com
-- <i class="fa fa-twitter"></i> NicholasStrayer
-- <i class="fa fa-github"></i> github.com/nstrayer
-- <i class="fa fa-link"></i> [nickstrayer.me](http://nickstrayer.me/)
-- <i class="fa fa-phone"></i> (734) 645-0110
+- <i class="fa fa-envelope"></i> rob.a.b.smith@gmail.com
+<!-- - <i class="fa fa-twitter"></i> NicholasStrayer -->
+- <i class="fa fa-github"></i> github.com/robabsmith
+<!-- - <i class="fa fa-link"></i> [nickstrayer.me](http://nickstrayer.me/) -->
+- <i class="fa fa-phone"></i> (0045) 4268 9858
 
 
 
@@ -77,13 +79,12 @@ Language Skills {#skills}
 ```{r}
 skills <- tribble(
   ~skill,               ~level,
-  "R",                  5,
-  "Javascript (d3.js)", 4.5,
-  "Python",             4,
-  "Bash",               3.5,
-  "SQL",                3,
-  "C++",                3,
-  "AWK",                3
+  "Excel",              4.8,
+  "R",                  4.5,
+  "SAS",                2.5,
+  "Python",             1.4,
+  "STATA",              1,
+  "Visual Basic",       0.5,
 )
 
 build_skill_bars(skills)
@@ -91,32 +92,19 @@ build_skill_bars(skills)
 
 
 
-
-
-Disclaimer {#disclaimer}
---------------------------------------------------------------------------------
-
-Made with the R package [**pagedown**](https://github.com/rstudio/pagedown). 
-
-The source code is available at [github.com/nstrayer/cv](https://github.com/nstrayer/cv).
-
-Last updated on `r Sys.Date()`.
-
-
-
-
 Main
 ================================================================================
 
-Nick Strayer {#title}
+Robert Smith {#title}
 --------------------------------------------------------------------------------
 
 
 ```{r}
-intro_text <- "I have made [visualizations viewed by hundreds of thousands of people](https://www.nytimes.com/interactive/2016/08/26/us/college-student-migration.html), [sped up query times for 25 terabytes of data by an average of 4,800 times](https://livefreeordichotomize.com/2019/06/04/using_awk_and_r_to_parse_25tb/), and built [packages for R](https://github.com/nstrayer/shinysense) that let you [do magic](http://nickstrayer.me/dataDayTexas/).
+intro_text <- "Through work and education experience I have developed a great interest in business processes and the flow of information between functional components of an organisation.
 
-Currently searching for a data science position that allows me to build tools using visualization and machine learning to help people explore and understand their data. 
-"
+My work experience is quite diverse and has given me insights into a wide variety of markets and value chains, and the motivations of corporates and individuals involved in business growth initiatives. Experience in the investment advice industry allowed me to learn client management, operational and budget planning, together with the technical and regulatory aspects of the industry.
+
+Further education and development have followed me through all roles in one way or another, and my most recent role as a PhD fellow is another example. Data analysis, programming and the Danish economy as the central learning elements."
 
 cat(sanitize_links(intro_text))
 ```
@@ -140,12 +128,12 @@ print_section(position_data, 'research_positions')
 ```
 
 
-
+\newpage
 Industry Experience {data-icon=suitcase}
 --------------------------------------------------------------------------------
 
 ::: aside
-I have worked in a variety of roles ranging from journalist to software engineer to data scientist. I like collaborative environments where I can learn from my peers. 
+I have worked in several quite different roles, ranging from market researcher to workflow developer. In each role there was a strong focus on learning and the improvement of the working environment around me.
 :::
 
 ```{r}
@@ -153,14 +141,13 @@ print_section(position_data, 'industry_positions')
 ```
 
 <br>
-<br>
-<br>
+
 
 Teaching Experience {data-icon=chalkboard-teacher}
 --------------------------------------------------------------------------------
 
 ::: aside
-I am passionate about education. I believe that no topic is too complex if the teacher is empathetic and willing to think about new methods of approaching task. 
+Teaching is an extraordinary way to connect with people and to share your enthusiasm for a subject. It gives me great satisfaction to support and promote the strengths of the people I have had the opportunity to guide.
 :::
 
 ```{r}
@@ -168,47 +155,17 @@ print_section(position_data, 'teaching_positions')
 ```
 
 
-Selected Data Science Writing {data-icon=chart-line}
---------------------------------------------------------------------------------
 
+Selected Publications {data-icon=book}
+--------------------------------------------------------------------------------
 
 ::: aside
-I regularly blog about data science and visualization on my blog [LiveFreeOrDichotomize.](https://livefreeordichotomize.com/)
+The final components of my PhD should be complete within the next few months. These will also be submitted for publication with recognised academic journals after the PhD has been assessed by the external evaluation committee.
 :::
-
-```{r}
-print_section(position_data, 'data_science_writings')
-```
-
-
-
-Selected Press (About)  {data-icon=newspaper}
---------------------------------------------------------------------------------
-
-```{r}
-print_section(position_data, 'about_me_press')
-```
-
-
-
-Selected Press (By)  {data-icon=newspaper}
---------------------------------------------------------------------------------
-
-```{r}
-print_section(position_data, 'by_me_press')
-```
-
-
-
-
-Selected Publications, Posters, and Talks {data-icon=book}
---------------------------------------------------------------------------------
 
 ```{r}
 print_section(position_data, 'academic_articles')
 ```
-
-
 
 ```{r}
 if(PDF_EXPORT){
@@ -228,4 +185,18 @@ Links {data-icon=link}
 }
 ```
 
+Social Responsibility {data-icon=users}
+--------------------------------------------------------------------------------
+
+```{r}
+print_section(position_data, 'social_responsibility')
+```
+
+
+Sports and Recreation {data-icon=walking}
+--------------------------------------------------------------------------------
+
+```{r}
+print_section(position_data, 'recreation')
+```
 
