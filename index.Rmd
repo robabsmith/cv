@@ -200,3 +200,9 @@ Sports and Recreation {data-icon=walking}
 print_section(position_data, 'recreation')
 ```
 
+References {data-icon=phone-volume}
+--------------------------------------------------------------------------------
+
+```{r}
+print_section(position_data, 'references')
+```
