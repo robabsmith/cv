@@ -101,3 +101,26 @@ sup {
   width: 100%;
 }
 
+/* unvisited link */
+a:link {
+  color: #0c68c4;
+}
+
+/* visited link */
+a:visited {
+  color: #41566b;
+}
+
+/* mouse over link */
+a:hover {
+  color: #117fad;
+}
+
+/* selected link */
+a:active {
+  color: #170e78;
+}
+
+.break-after-me {
+  break-after: page;
+}

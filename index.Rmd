@@ -55,7 +55,7 @@ Aside
 ```{r}
 # When in export mode the little dots are unaligned, so fix that. 
 if(PDF_EXPORT){
-  cat("View this CV online with links at _nickstrayer.me/cv_")
+  cat("View this CV online with links at _robsmithwebsite/cv_")
 } else {
   cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://github.com/robabsmith/cv/blob/master/rob_smith_cv.pdf)")
 }
@@ -64,14 +64,11 @@ if(PDF_EXPORT){
 Contact {#contact}
 --------------------------------------------------------------------------------
 
-
-- <i class="fa fa-envelope"></i> rob.a.b.smith@gmail.com
+- <i class="fa fa-envelope"></i> [rob.a.b.smith@gmail.com](mailto:rob.a.b.smith@gmail.com)
 <!-- - <i class="fa fa-twitter"></i> NicholasStrayer -->
-- <i class="fa fa-github"></i> github.com/robabsmith
-<!-- - <i class="fa fa-link"></i> [nickstrayer.me](http://nickstrayer.me/) -->
-- <i class="fa fa-phone"></i> (0045) 4268 9858
-
-
+- <i class="fa fa-github"></i> [github.com/robabsmith](www.github.com/robabsmith)
+<!-- - <i class="fa fa-link"></i> [netlify.robsmith.com](http://netlify.robsmith/) -->
+- <i class="fa fa-phone"></i> (+45) 4268 9858
 
 Language Skills {#skills}
 --------------------------------------------------------------------------------
@@ -140,10 +137,8 @@ I have worked in several quite different roles, ranging from market researcher t
 print_section(position_data, 'industry_positions')
 ```
 
-<br>
 
-
-Teaching Experience {data-icon=chalkboard-teacher}
+Teaching and Knowledge Dissemination {data-icon=chalkboard-teacher}
 --------------------------------------------------------------------------------
 
 ::: aside
@@ -153,7 +148,6 @@ Teaching is an extraordinary way to connect with people and to share your enthus
 ```{r}
 print_section(position_data, 'teaching_positions')
 ```
-
 
 
 Selected Publications {data-icon=book}
@@ -185,13 +179,24 @@ Links {data-icon=link}
 }
 ```
 
-Social Responsibility {data-icon=users}
+Social Responsibility {data-icon=users .break-after-me}
 --------------------------------------------------------------------------------
 
 ```{r}
 print_section(position_data, 'social_responsibility')
 ```
 
+
+Work Eligibility {data-icon=phone-volume}
+--------------------------------------------------------------------------------
+
+::: aside
+As a South African national, some additional information regarding my residency status will be relevant.
+:::
+
+```{r}
+print_section(position_data, 'residency')
+```
 
 Sports and Recreation {data-icon=walking}
 --------------------------------------------------------------------------------
@@ -200,8 +205,13 @@ Sports and Recreation {data-icon=walking}
 print_section(position_data, 'recreation')
 ```
 
+
 References {data-icon=phone-volume}
 --------------------------------------------------------------------------------
+
+::: aside
+In the interst of protection of personal information, contact details for references will only be provided directly on request.
+:::
 
 ```{r}
 print_section(position_data, 'references')
